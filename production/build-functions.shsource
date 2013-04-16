@@ -977,7 +977,8 @@ fn-checkout-basebuilder ()
     else
         echo "EBuilderDir already existed, so no need to fetch that"
     fi
-    ant -f $EBuilderDir/eclipse/getBaseBuilder.xml -DWORKSPACE=$DROP_DIR -DbuilderVersion=${BASEBUILDER_TAG}
+    #    ant -f $EBuilderDir/eclipse/getBaseBuilderAndTools.xml -DWORKSPACE=$DROP_DIR -DbuilderVersion=${BASEBUILDER_TAG}
+    ant -f $EBuilderDir/eclipse/getBaseBuilderAndTools.xml -DWORKSPACE=$DROP_DIR
 
     #pushd $( dirname "$BUILDER_DIR" )
     #wget --no-verbose -O basebuilder-${BASEBUILDER_TAG}.zip http://git.eclipse.org/c/platform/eclipse.platform.releng.basebuilder.git/snapshot/eclipse.platform.releng.basebuilder-${BASEBUILDER_TAG}.zip 2>&1
