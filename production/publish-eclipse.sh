@@ -43,5 +43,9 @@ fn-gather-compile-logs "$BUILD_ID" "$aggDir" "$buildDirectory"
 fn-parse-compile-logs "$BUILD_ID" \
     "$EBuilderDir"/eclipse/helper.xml \
     "$buildDirectory" "$launcherJar"
+    
+fn-summarize-comparator-logs "$BUILD_ID" \
+    "$EBuilderDir"/eclipse/buildScripts/eclipse_compare.xml \
+    "$buildDirectory" "$launcherJar"    
 
 fn-publish-eclipse "$BUILD_TYPE" "$STREAM" "$BUILD_ID" "$aggDir" "$buildDirectory" "$launcherJar"
