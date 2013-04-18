@@ -4,15 +4,11 @@
 
     <target
         name="compare">
-        <echo message="Genererating comparator log summariies ..." />
-        
-        <property name="class" value="org.eclipse.releng.build.tools.comparator.ant.ComparatorSummaryReport" />
-        <taskdef name="comparatorSummary" classname="${class}" />
-         
-        
+        <echo message="Genererating comparator log summaries ..." />
+
         <!--create html output for compile logs -->
         <comparatorSummary
-            builddirectory="${buildDirectory}" />
+            builddirectory="${buildDirectory}${buildId}" />
    </target>
 
 </project>
