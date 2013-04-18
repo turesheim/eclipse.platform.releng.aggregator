@@ -186,10 +186,6 @@
         name="getBaseBuilder"
         depends="checkHudson, init">
 
-        <fail
-            unless="builderVersion"
-            message="This script needs builderVersion to run" />
-
         <!-- remove old one, if there, and make sure one exists for eventual checkout/copy/globmapper -->
         <delete dir="${WORKSPACE}/${folderName}" />
         <mkdir dir="${WORKSPACE}/${folderName}" />
@@ -204,9 +200,6 @@
         depends="init"
         if="platformURL">
 
-<!-- 
-TODO: should I just use file system version? (would assume local bulds have one in same location)
--->
         <get
             dest="${TMP}"
             src="${platformURL}/${platformFile}"
