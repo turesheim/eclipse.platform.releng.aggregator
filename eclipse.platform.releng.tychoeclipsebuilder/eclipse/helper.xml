@@ -182,6 +182,17 @@
                         name="arch"
                         value="ppc64" />
                 </antcall>
+                <antcall target="packageSwtStandalone">
+                    <param
+                        name="os"
+                        value="linux" />
+                    <param
+                        name="ws"
+                        value="gtk" />
+                    <param
+                        name="arch"
+                        value="armv6l" />
+                </antcall>
             </sequential>
         </parallel>
 
